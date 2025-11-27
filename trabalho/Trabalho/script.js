@@ -15,22 +15,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function darkModeToggle() {
-    // Alterna a classe dark-mode no 'body' (pois as variáveis globais estão lá)
-    if (document.body.classList.contains('dark-mode')) {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
+function toggleLightMode() {
+    // Alterna a classe 'light-mode' no 'body'
+    if (document.body.classList.contains('light-mode')) {
+        document.body.classList.remove('light-mode');
+        localStorage.setItem('theme', 'dark'); // O tema padrão original é 'dark'
     } else {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
+        document.body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     // Carrega o tema salvo no localStorage
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
+    // Se o tema salvo for 'light', aplica a classe. Caso contrário, mantém o tema 'dark' (padrão do CSS).
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
     }
 });
 
@@ -45,12 +46,10 @@ botoesCurtir.forEach(botao => {
         if (botao.classList.contains('curtido')) {
             botao.classList.remove('curtido');
             numeroAtual--;
-            // CORRIGIDO: Uso de Template Literal (` `)
             botao.innerHTML = `Curtir <span class="contagem">${numeroAtual}</span>`;
         } else {
             botao.classList.add('curtido');
             numeroAtual++;
-            // CORRIGIDO: Uso de Template Literal (` `)
             botao.innerHTML = `Curtiu <span class="contagem">${numeroAtual}</span>`;
         }
     });

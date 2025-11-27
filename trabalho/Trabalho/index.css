@@ -194,6 +194,31 @@ img.img-responsiva-sobre {
     line-height: 1.8;
 }
 
+/* Botões de Curtir/Comentar */
+.botoes-card {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 8px;
+}
+
+.btn-curtir, .btn-comentar {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9em;
+    background-color: #343a40;
+    color: white;
+}
+
+.btn-curtir.curtido {
+    background-color: #00d4ff;
+    color: #1a1a1a;
+}
+
 /* VÍDEO */
 .vídeo-container {
     width: 80%;
@@ -416,4 +441,192 @@ footer ul li a:hover {
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+/* ------------------------------------------- */
+/* ESTILIZAÇÃO DO BOTÃO DE ALTERNÂNCIA */
+/* ------------------------------------------- */
+
+.btn-toggle-mode {
+    background: #f39c12; /* Cor de destaque (Laranja) */
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: center;
+}
+
+.btn-toggle-mode:hover {
+    background: #e67e22;
+    transform: scale(1.05);
+}
+
+/* ------------------------------------------- */
+/* MODO CLARO: OVERRIDES (Inversão de Cores) */
+/* ------------------------------------------- */
+
+/* Fundo do Body (fora do main-wrapper) */
+body.light-mode {
+    background: #ffffff;
+}
+
+/* Navbar */
+body.light-mode .navbar-custom {
+    background: #f8f9fa; /* Fundo claro para a navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+body.light-mode .navbar-custom .navbar-brand {
+    color: #1a1a1a;
+}
+body.light-mode .navbar-custom .nav-link {
+    color: #343a40 !important;
+}
+body.light-mode .navbar-custom .nav-link:hover {
+    color: #00d4ff !important; /* Mantém o acento azul */
+}
+/* Toggler Icon precisa ser escuro em fundo claro */
+body.light-mode .navbar-toggler-icon {
+    /* Filtro para garantir que o ícone Bootstrap fique visível em fundo claro */
+    filter: invert(1); 
+}
+
+
+/* Override sections para tema claro */
+body.light-mode #sobre, 
+body.light-mode #serviço-desktop, 
+body.light-mode #serviço-mobile, 
+body.light-mode #contato {
+    background: #ffffff; /* Fundo sólido branco */
+    color: #1a1a1a; /* Texto escuro */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Cores de Destaque (H2) */
+body.light-mode #sobre h2, 
+body.light-mode #serviço-desktop h2, 
+body.light-mode #serviço-mobile h2, 
+body.light-mode #contato h2 {
+    color: #008cff; /* Azul mais forte */
+}
+
+/* Parágrafos e texto geral */
+body.light-mode #sobre p, 
+body.light-mode #serviço-desktop p, 
+body.light-mode #serviço-mobile p {
+    color: #343a40;
+}
+
+/* Bordas e Sombras de Imagens */
+body.light-mode .img-borda {
+    border: 4px solid #008cff;
+    box-shadow: 0 8px 32px rgba(0, 140, 255, 0.1);
+}
+
+body.light-mode .img-borda:hover {
+    box-shadow: 0 12px 48px rgba(0, 140, 255, 0.3);
+}
+
+body.light-mode img.img-responsiva-sobre {
+    border: 4px solid #008cff;
+    box-shadow: 0 8px 32px rgba(0, 140, 255, 0.1);
+}
+
+/* Cards de Destaque */
+body.light-mode .card-destaque {
+    background: rgba(0, 140, 255, 0.05);
+    border: 2px solid #008cff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .card-destaque:hover {
+    background: rgba(0, 140, 255, 0.1);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .card-destaque h3 {
+    color: #008cff;
+}
+body.light-mode .card-destaque p {
+    color: #343a40;
+}
+body.light-mode .btn-curtir, body.light-mode .btn-comentar {
+    background-color: #f0f0f0;
+    color: #333;
+}
+body.light-mode .btn-curtir.curtido {
+    background-color: #008cff;
+    color: white;
+}
+
+/* Vídeo Container */
+body.light-mode .vídeo-container {
+    border: 4px solid #008cff;
+    box-shadow: 0 12px 40px rgba(0, 140, 255, 0.1);
+}
+
+/* Formulário */
+body.light-mode #contato form {
+    background: #ffffff;
+    border: 2px solid #008cff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode #contato form label,
+body.light-mode #contato form legend {
+    color: #343a40;
+}
+
+body.light-mode #contato form input,
+body.light-mode #contato form textarea {
+    background: #f8f9fa;
+    color: #1a1a1a;
+    border: 1px solid #ced4da;
+}
+
+body.light-mode #contato form input:focus,
+body.light-mode #contato form textarea:focus {
+    border-color: #008cff;
+    background: #ffffff;
+}
+
+body.light-mode #contato form fieldset {
+    border: 1px solid #ced4da;
+}
+
+body.light-mode #contato form input[type="submit"],
+body.light-mode #contato form input[type="reset"] {
+    background: linear-gradient(135deg, #008cff, #0056b3);
+    color: white;
+}
+
+body.light-mode #contato form input[type="submit"]:hover,
+body.light-mode #contato form input[type="reset"]:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    box-shadow: 0 6px 20px rgba(0, 140, 255, 0.4);
+}
+
+/* Footer */
+body.light-mode footer {
+    background: #e9ecef;
+    color: #1a1a1a;
+    border-top: 2px solid #008cff;
+}
+
+body.light-mode footer p {
+    color: #343a40;
+}
+
+body.light-mode footer ul li a {
+    color: #008cff;
+}
+
+body.light-mode footer ul li a:hover {
+    color: #1a1a1a;
+    text-shadow: none;
 }
