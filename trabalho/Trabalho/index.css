@@ -2,95 +2,53 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Garante que não haja espaço extra no topo */
 html, body {
     margin: 0;
     padding: 0;
+    background: #f5f5f5;
 }
 
-/* Ajuste para conteúdo não ficar escondido atrás da navbar fixa */
 body {
     padding-top: 70px;
 }
 
-.imagens-lado-a-lado {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-}
-.img-borda {
-    border: 4px solid #0094ff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-.img-desktop {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    object-position: center;
-}
-.vídeo {
-    border: 4px solid #0094ff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-
-nav {
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilo da Navbar */
+/* NAVBAR */
 .navbar-custom {
-    background: #000000;
-    padding: 0.45rem 1rem;
-    position: fixed; /* Fixa no topo */
+    background: #1a1a1a;
+    padding: 0.5rem 1rem;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     right: 0;
     margin: 0;
     z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-custom .navbar-brand {
     color: #ffffff;
     font-weight: 700;
-}
-.navbar-custom .nav-link {
-    color: rgba(255,255,255,0.95);
-    margin-right: 0.4rem;
-}
-.navbar-custom .nav-link:hover {
-    color: #f39c12;
-}
-.navbar-custom .navbar-toggler {
-    border-color: rgba(255,255,255,0.15);
-}
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-nav ul li {
-    margin: 15px;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-nav ul li a:hover {
-    color: #f39c12;
+    font-size: 1.8rem;
 }
 
+.navbar-custom .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #f39c12 !important;
+}
+
+/* HOME SECTION */
 #home {
-    background: url(Imagem/4k-tech-1eweq7h47kehxd7y.jpg) center/cover no-repeat;
-    color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Imagem/4k-tech-1eweq7h47kehxd7y.jpg) center/cover no-repeat;
+    color: white;
     text-align: center;
     height: 100vh;
     display: flex;
@@ -98,210 +56,364 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
 }
+
 #home h1 {
-    font-size: 50px;
-}
-#home p {
-    font-size: 30px;
-    font-family: Cambria, Conchin, Georgia, Times, "Times New Roman", serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideDown 1s ease-out;
 }
 
-.lista ul, .lista li {
-    text-align: left;
+#home p {
+    font-size: 1.8rem;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-form label {
-    text-align: left;
-    margin-top: 10px;
-    font-weight: bold;
-}
-form input, form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-form input[type=submit] {
-    background: #222;
+
+/* SECTIONS */
+#sobre, #serviço-desktop, #serviço-mobile, #contato {
+    background: linear-gradient(180deg, rgba(20, 40, 80, 0.8), rgba(10, 20, 40, 0.8)), url(Imagem/background-techly-blue-lines-light-only.svg) center/cover no-repeat;
     color: white;
-    padding: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-form input[type=submit]:hover {
-    background: #f39c12;
-}
-footer {
-    background: rgb(0, 0, 0);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 100px 40px;
+    min-height: fit-content;
 }
+
+#sobre h2, #serviço-desktop h2, #serviço-mobile h2, #contato h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #00d4ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+#sobre p, #serviço-desktop p, #serviço-mobile p {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* IMAGENS */
+.imagens-lado-a-lado {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.img-borda {
+    border: 4px solid #00d4ff;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.img-borda:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 48px rgba(0, 212, 255, 0.5);
+}
+
+.img-desktop {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
+}
+
+img.img-responsiva-sobre {
+    max-width: 600px;
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 20px;
+    border: 4px solid #00d4ff;
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+}
+
+/* CARDS DESTAQUE */
+.destaques-desktop {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.card-destaque {
+    background: rgba(0, 212, 255, 0.05);
+    border: 2px solid #00d4ff;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.card-destaque:hover {
+    transform: translateY(-15px);
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 16px 48px rgba(0, 212, 255, 0.3);
+}
+
+.icon-destaque {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.card-destaque h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #00d4ff;
+}
+
+.card-destaque p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+}
+
+/* VÍDEO */
+.vídeo-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 4px solid #00d4ff;
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+}
+
+.vídeo-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* BOTÃO PREÇOS */
+.Tabela-de-Preços {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.Tabela-de-Preços a {
+    background: linear-gradient(135deg, #00d4ff, #0094ff);
+    color: #fff;
+    padding: 16px 50px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Tabela-de-Preços a:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.6);
+    background: linear-gradient(135deg, #00f0ff, #00b4ff);
+}
+
+/* FORMULÁRIO */
+#contato form {
+    background: rgba(26, 26, 26, 0.9);
+    border-radius: 20px;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+#contato h2 {
+    margin-bottom: 30px;
+}
+
+#contato form label {
+    color: #00d4ff;
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+    text-align: left;
+}
+
+#contato form input,
+#contato form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 1px solid rgba(0, 212, 255, 0.5);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#contato form input:focus,
+#contato form textarea:focus {
+    outline: none;
+    border-color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+}
+
+#contato form fieldset {
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+#contato form legend {
+    color: #00d4ff;
+    font-weight: 600;
+    padding: 0 10px;
+}
+
+#contato form input[type="radio"],
+#contato form input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+#contato form input[type="submit"],
+#contato form input[type="reset"] {
+    width: 48%;
+    background: linear-gradient(135deg, #00d4ff, #0094ff);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+#contato form input[type="submit"] {
+    margin-right: 4%;
+}
+
+#contato form input[type="submit"]:hover,
+#contato form input[type="reset"]:hover {
+    background: linear-gradient(135deg, #00f0ff, #00b4ff);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+}
+
+/* FOOTER */
+footer {
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+    border-top: 2px solid #00d4ff;
+}
+
 footer p {
-    margin: 10px 0;
+    margin: 15px 0;
+    font-size: 1.1rem;
 }
+
 footer ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin: 15px 0;
-}
-footer ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-footer ul li a:hover {
-    color: #f39c12;
-}
-.Tabela-de-Preços a {
-    background: #000000;
-    color: #fff;
-    padding: 2vh 8vh;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-.Tabela-de-Preços a:hover {
-    background: #f39c12;
-    transform: scale(1.05);
+    gap: 40px;
+    margin: 25px 0;
+    flex-wrap: wrap;
 }
 
-#sobre, #serviço-desktop, #serviço-mobile, #contato {
-    background: url(Imagem/background-techly-blue-lines-light-only.svg) center/cover no-repeat;
-    color: white;
-    height: fit-content;
+footer ul li a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+footer ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    
+    #home p {
+        font-size: 1.3rem;
+    }
+    
+    #sobre, #serviço-desktop, #serviço-mobile, #contato {
+        padding: 60px 20px;
+    }
+    
+    #sobre h2, #serviço-desktop h2, #serviço-mobile h2, #contato h2 {
+        font-size: 2rem;
+    }
+    
+    .img-desktop {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+    }
+    
+    .imagens-lado-a-lado {
+        gap: 20px;
+        flex-direction: column;
+    }
+    
+    .destaques-desktop {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    #contato form {
+        padding: 30px 20px;
+        width: 95%;
+    }
+    
+    #contato form input[type="submit"],
+    #contato form input[type="reset"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* MAIN */
+.centralizar-conteudo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-#sobre p, #serviço-desktop p, #serviço-mobile p {
-    max-width: 800px;
-}
-#serviço-mobile {
-    height: 120vh;
-}
-.destaques-desktop {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.card-destaque {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #0094ff;
-    border-radius: 16px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.card-destaque:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 48px rgba(0, 148, 255, 0.3);
-}
-.icon-destaque {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-.card-destaque h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-.card-destaque p {
-    font-size: 16px;
-    color: #e0e0e0;
-    line-height: 1.6;
-}
-#contato form {
-    background: rgba(35, 81, 114, 0.95);
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    padding: 40px 24px;
-    width: 600px;
-    margin: 40px auto;
-    color: #fff;
-}
-#contato h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: white;
-}
-#contato form label {
-    color: white;
-    font-weight: bold;
-}
-#contato form input,
-#contato form textarea {
-    background: #182c3a;
-    color: #fff;
-    border: 1px solid #33cfff;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 1rem;
-}
-#contato form input[type=submit],
-#contato form input[type=reset] {
-    background: #0094ff;
-    color: #fff;
-    border: none;
-    font-weight: bold;
-    margin-top: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-#contato form input[type=submit]:hover,
-#contato form input[type=reset]:hover {
-    background: #33cfff;
-    color: #182c3a;
-}
-section.geral {
-    background: url(Imagem/background-techly-blue-lines-light-only.svg) center/cover no-repeat;
-    color: white;
-    height: 150vh;
-    display: flex;
-    align-content: center;
-}
-div.card {
-    margin: 5rem;
-    justify-content: center;
-    align-content: center;
-}
-.img-borda_2 {
-    border: 4px solid #0094ff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-.card {
-    border: 4px solid #0094ff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    max-width: 40rem;
-    overflow: hidden;
-    height: 100%;
-}
-.card-img-top {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center;
 }
